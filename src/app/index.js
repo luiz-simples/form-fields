@@ -1,6 +1,6 @@
 'use strict';
 
-var dependencies = ['ngCookies', 'ngSanitize', 'restangular', 'ui.router'];
+var dependencies = ['ngCookies', 'ngSanitize', 'restangular', 'ui.router', 'dndLists'];
 
 this.mySystem = angular.module('mySystem', dependencies).config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider.state('home', {
