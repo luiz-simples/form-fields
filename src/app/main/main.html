@@ -62,9 +62,16 @@
           <li ng-repeat="item in models.templates"
               dnd-draggable="item"
               dnd-effect-allowed="copy"
-              dnd-copied="item.id = item.id + 1"
-              >
-              <button type="button" class="btn btn-default btn-lg" disabled="disabled">{{item.type}}</button>
+              dnd-copied="item.id = item.id + 1">
+
+              <div ng-show="item.type=='container'" class="container-element box box-blue">
+                <h3>Container</h3>
+                <div class="column">&nbsp;</div>
+                <div class="clearfix"></div>
+              </div>
+
+              <button ng-show="item.type=='item'" type="button" class="btn btn-default btn-lg" disabled="disabled">{{item.type}}</button>
+
           </li>
         </ul>
       </div>

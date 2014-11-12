@@ -7,6 +7,7 @@ this.mySystem.controller('MainCtrl', function MainCtrl($scope) {
         {type: 'item', id: 2},
         {type: 'container', id: 1, columns: [[], []]}
     ],
+
     dropzones: {
         'A': [
             {
