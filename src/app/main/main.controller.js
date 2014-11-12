@@ -1,120 +1,43 @@
 'use strict';
 
+var id = 0;
+
+var createType = function CreateType(type, label, icon, attrs) {
+  var ret = {
+    type: type,
+    label: label,
+    id: ++id,
+    icon: icon
+  };
+
+  if (attrs)
+    for (var attr in attrs)
+      ret[attr] = attrs[attr];
+
+  return ret;
+};
+
 this.mySystem.controller('MainCtrl', function MainCtrl($scope) {
   $scope.models = {
     selected: null,
     templates: [
-        {type: 'item', id: 2},
-        {type: 'container', id: 1, columns: [[], []]}
+      createType('container',      'Container',        'inbox', {columns: [[], []]}),
+      createType('input_text',     'Campo livre',      'font', {attr: {}}),
+      createType('input_area',     'Texto Livre',      'text-width', {attr: {}}),
+      createType('input_email',    'Email',            'envelope', {attr: {}}),
+      createType('input_currency', 'Monetário',        'usd', {attr: {}}),
+      createType('input_decimal',  'Decimal',          'sound-7-1', {attr: {}}),
+      createType('input_percent',  'Percentual',       'sound-5-1', {attr: {}}),
+      createType('input_boolean',  'Verdadeiro/Falso', 'ok-circle', {attr: {}})
     ],
 
     dropzones: {
-        'A': [
-            {
-                'type': 'container',
-                'id': 1,
-                'columns': [
-                    [
-                        {
-                            'type': 'item',
-                            'id': '1'
-                        },
-                        {
-                            'type': 'item',
-                            'id': '2'
-                        }
-                    ],
-                    [
-                        {
-                            'type': 'item',
-                            'id': '3'
-                        }
-                    ]
-                ]
-            },
-            {
-                'type': 'item',
-                'id': '4'
-            },
-            {
-                'type': 'item',
-                'id': '5'
-            },
-            {
-                'type': 'item',
-                'id': '6'
-            }
-        ],
-        'B': [
-            {
-                'type': 'item',
-                'id': 7
-            },
-            {
-                'type': 'item',
-                'id': '8'
-            },
-            {
-                'type': 'container',
-                'id': '2',
-                'columns': [
-                    [
-                        {
-                            'type': 'item',
-                            'id': '9'
-                        },
-                        {
-                            'type': 'item',
-                            'id': '10'
-                        },
-                        {
-                            'type': 'item',
-                            'id': '11'
-                        }
-                    ],
-                    [
-                        {
-                            'type': 'item',
-                            'id': '12'
-                        },
-                        {
-                            'type': 'container',
-                            'id': '3',
-                            'columns': [
-                                [
-                                    {
-                                        'type': 'item',
-                                        'id': '13'
-                                    }
-                                ],
-                                [
-                                    {
-                                        'type': 'item',
-                                        'id': '14'
-                                    }
-                                ]
-                            ]
-                        },
-                        {
-                            'type': 'item',
-                            'id': '15'
-                        },
-                        {
-                            'type': 'item',
-                            'id': '16'
-                        }
-                    ]
-                ]
-            },
-            {
-                'type': 'item',
-                'id': 16
-            }
-        ]
+      'A': [],
+      'B': []
     }
   };
 
-  $scope.$watch('models.dropzones', function(model) {
-    $scope.modelAsJson = angular.toJson(model, true);
-  }, true);
+  // $scope.$watch('models.dropzones', function(model) {
+  //   $scope.modelAsJson = angular.toJson(model, true);
+  // }, true);
 });
