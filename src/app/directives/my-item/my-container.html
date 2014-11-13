@@ -1,0 +1,7 @@
+<div class="container-element box box-blue">
+  <h3>Container {{item.id}}</h3>
+  <div ng-class="{column: item.columns.length > 1}" ng-repeat="list in item.columns">
+    <my-list></my-list>
+  </div>
+  <div class="clearfix"></div>
+</div>

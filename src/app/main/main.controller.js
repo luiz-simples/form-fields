@@ -32,8 +32,8 @@ this.mySystem.controller('MainCtrl', function MainCtrl($scope) {
     ],
 
     dropzones: {
-      'A': [],
-      'B': []
+      'A': []
+      // 'B': []
     }
   };
 
