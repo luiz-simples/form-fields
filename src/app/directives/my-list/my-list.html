@@ -1,10 +1,9 @@
-<ul dnd-list="list">
+<ul dnd-list="list" class="stage">
   <li ng-repeat="item in list"
       dnd-draggable="item"
       dnd-effect-allowed="move"
       dnd-moved="list.splice($index, 1)"
       dnd-selected="models.selected = item"
-      ng-class="{selected: models.selected === item}">
-    <my-item></my-item>
-  </li>
+      ng-class="{selected: models.selected === item}"
+      my-item></li>
 </ul>

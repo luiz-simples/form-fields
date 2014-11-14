@@ -20,6 +20,13 @@
   "white": true,
   "validthis": true,
   "globals": {
-    "angular": false
+    "angular": false,
+    "describe": false,
+    "beforeEach": false,
+    "browser": false,
+    "it": false,
+    "element": false,
+    "by": false,
+    "expect": false
   }
 }
