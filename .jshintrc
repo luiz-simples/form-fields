@@ -27,6 +27,7 @@
     "it": false,
     "element": false,
     "by": false,
-    "expect": false
+    "expect": false,
+    "_": false
   }
 }

@@ -9,7 +9,7 @@ this.mySystem.directive('myConfigure', function MyItemDirective(itemTypes) {
       scope.itemTypes = itemTypes;
 
       scope.$on('scanner-started', function(event, args) {
-        scope.myItemObj = args.item;
+        scope.myItemObj = _.cloneDeep(args.item);
         element.modal('show');
       });
     }

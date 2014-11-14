@@ -9,7 +9,8 @@
           dnd-draggable="item"
           dnd-moved="rows.splice($index, 1)"
           dnd-effect-allowed="move"
-          my-item="item"></li>
+          my-item="item"
+          ng-class="{itemli: item.type!='container'}"></li>
     </ul>
   </div>
 </div>
