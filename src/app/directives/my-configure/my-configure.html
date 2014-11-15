@@ -35,8 +35,15 @@
           <div ng-hide="myItemObj.type==='container'" class="form-group">
             <div class="checkbox">
               <label>
-                <input type="checkbox" ng-model="myItemObj.required">
+                <input type="checkbox" ng-model="myItemObj.isRequired">
                 The answer is required
+              </label>
+            </div>
+
+            <div class="checkbox">
+              <label>
+                <input type="checkbox" ng-model="myItemObj.denyDuplicated">
+                Deny duplicated data
               </label>
             </div>
           </div>
@@ -44,7 +51,7 @@
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Save and close</button>
+        <button type="button" ng-click="saveConfigItem()" class="btn btn-primary" data-dismiss="modal">Save and close</button>
       </div>
     </div>
   </div>

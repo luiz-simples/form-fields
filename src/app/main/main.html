@@ -1,27 +1,15 @@
 <my-menu></my-menu>
 
 <div class="container">
-  <div class="panel panel-default">
-    <div class="panel-heading">Input Types</div>
-    <div class="panel-body">
-      <button ng-repeat="item in dataTypes"
-              dnd-draggable="item"
-              dnd-effect-allowed="copy"
-              dnd-copied="editItem(item)"
-              type="button"
-              class="btn btn-default col-md-2 item_drag_{{item.type}}">
-        <span class="glyphicon glyphicon-{{item.icon}}"></span> {{item.label}}
-      </button>
-      </ul>
-    </div>
-  </div>
-
   <div class="simpleDemo">
     <ul dnd-list="mdl.structure">
       <li ng-repeat="item in mdl.structure"
           dnd-draggable="item"
           dnd-moved="mdl.structure.splice($index, 1)"
           dnd-effect-allowed="move"
+
+          dnd-selected="editItem(item)"
+
           ng-class="{itemli: item.type!='container'}"
           my-item="item"></li>
     </ul>

@@ -10,6 +10,9 @@
           dnd-moved="rows.splice($index, 1)"
           dnd-effect-allowed="move"
           my-item="item"
+
+          dnd-selected="editItem(item)"
+
           ng-class="{itemli: item.type!='container'}"></li>
     </ul>
   </div>
