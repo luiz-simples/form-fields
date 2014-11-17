@@ -1,0 +1,29 @@
+<my-menu state="{{actualState}}" view-menu-inputs="true"></my-menu>
+
+<div class="container">
+  <form role="form">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Name</label>
+      <input type="text" ng-model="form.name" class="form-control" id="formName" placeholder="Enter name">
+    </div>
+
+    <div class="form-group">
+      <label for="" class="label label-default">Below, mount your form with input fields.:</label>
+      <div class="simpleDemo">
+        <ul dnd-list="form.structure">
+          <li ng-repeat="item in form.structure"
+              dnd-draggable="item"
+              dnd-moved="form.structure.splice($index, 1)"
+              dnd-effect-allowed="move"
+
+              dnd-selected="editItem(item)"
+
+              ng-class="{itemli: item.type!='container'}"
+              my-item="item"></li>
+        </ul>
+      </div>
+    </div>
+  </form>
+</div>
+
+<my-configure></my-configure>

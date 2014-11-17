@@ -1,0 +1,53 @@
+<my-menu state="my-list-record"></my-menu>
+
+<div class="container">
+  <div class="table-responsive">
+    <table st-table="forms" class="table table-striped">
+  		<thead>
+    		<tr>
+    			<th st-sort="update">Date/Time</th>
+    			<th st-sort="name">Form</th>
+          <th></th>
+          <th></th>
+    		</tr>
+    		<tr>
+    			<th>
+    				<input st-search="'updated'" placeholder="search by updated" class="form-control" type="search" />
+    			</th>
+    			<th>
+    				<input st-search="'name'" placeholder="search by name" class="form-control" type="search" />
+    			</th>
+          <th></th>
+          <th></th>
+    		</tr>
+  		</thead>
+
+  		<tbody>
+    		<tr ng-repeat="form in forms">
+    			<td>{{form.updated | date }}</td>
+    			<td>{{form.name}}</td>
+          <td>
+      			<button type="button" ui-sref="formsUpdate({code: form.id})" class="btn btn-xs btn-warning">
+      				<i class="glyphicon glyphicon-pencil"></i> Edit
+      			</button>
+          </td>
+          <td>
+            <button type="button" ng-click="deleteForm(form)" class="btn btn-xs btn-danger">
+              <i class="glyphicon glyphicon-remove-sign"></i> Delete
+            </button>
+          </td>
+    		</tr>
+  		</tbody>
+
+  		<tfoot>
+  			<tr>
+  				<td colspan="4" class="text-center">
+  					<div st-pagination="" st-items-by-page="10" st-displayed-pages="7"></div>
+  				</td>
+  			</tr>
+  		</tfoot>
+	  </table>
+  </div>
+</div>
+
+<my-delete></my-delete>

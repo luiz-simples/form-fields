@@ -7,8 +7,9 @@ ul[dnd-list] * {
 }
 
 ul[dnd-list], ul[dnd-list] > li {
-    pointer-events: auto;
+  pointer-events: auto;
 	position: relative;
+	border: 1px solid #F9F9F9;
 }
 
 .simpleDemo ul[dnd-list] {

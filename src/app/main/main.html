@@ -1,19 +1,1 @@
 <my-menu></my-menu>
-
-<div class="container">
-  <div class="simpleDemo">
-    <ul dnd-list="mdl.structure">
-      <li ng-repeat="item in mdl.structure"
-          dnd-draggable="item"
-          dnd-moved="mdl.structure.splice($index, 1)"
-          dnd-effect-allowed="move"
-
-          dnd-selected="editItem(item)"
-
-          ng-class="{itemli: item.type!='container'}"
-          my-item="item"></li>
-    </ul>
-  </div>
-</div>
-
-<my-configure></my-configure>

@@ -32,17 +32,29 @@
     <script src="../bower_components/restangular/dist/restangular.js"></script>
     <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="../bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js"></script>
+    <script src="../bower_components/angular-smart-table/dist/smart-table.min.js"></script>
     <!-- endbower -->
     <script src="../bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
     <!-- endbuild -->
 
     <!-- build:js({.tmp,src}) scripts/app.js -->
     <script src="app/index.js"></script>
-    <script src="app/main/main.controller.js"></script>
-    <script src="app/main/item-types.constant.js"></script>
+
+    <script src="app/directives/my-storage.factory.js"></script>
+    <script src="app/directives/item-types.constant.js"></script>
+
+    <script src="app/directives/my-delete/my-delete.directive.js"></script>
     <script src="app/directives/my-item/my-item.directive.js"></script>
     <script src="app/directives/my-menu/my-menu.directive.js"></script>
     <script src="app/directives/my-configure/my-configure.directive.js"></script>
+
+    <script src="app/main/main.route.js"></script>
+    <script src="app/main/main.controller.js"></script>
+
+    <script src="app/forms/forms.routes.js"></script>
+    <script src="app/forms/forms.factory.js"></script>
+    <script src="app/forms/forms.list.controller.js"></script>
+    <script src="app/forms/forms.fields.controller.js"></script>
 
     <!-- inject:partials -->
     <!-- angular templates will be automaticaly converted in js and inserted here -->

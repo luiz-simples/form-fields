@@ -1,6 +1,6 @@
 'use strict';
 
-this.mySystem.directive('myConfigure', function MyItemDirective(itemTypes) {
+this.mySystem.directive('myConfigure', function MyConfigureDirective(itemTypes) {
   return {
     restrict: 'E',
     replace: true,
@@ -23,14 +23,13 @@ this.mySystem.directive('myConfigure', function MyItemDirective(itemTypes) {
       scope.saveConfigItem = function SaveConfigItem() {
         if (scope.myItemObj.type === 'container') {
           while(scope.myItemObj.cols.length > scope.myItemObj.columns) {
-            var col = scope.myItemObj.pop();
+            var col = scope.myItemObj.cols.pop();
             var lastIndex = scope.myItemObj.cols.length-1;
             scope.myItemObj.cols[lastIndex] = scope.myItemObj.cols[lastIndex].concat(col);
           }
 
           while(scope.myItemObj.cols.length < scope.myItemObj.columns)
             scope.myItemObj.cols.push([]);
-
             delete scope.myItemObj.columns;
         }
 

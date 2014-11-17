@@ -10,18 +10,20 @@ this.mySystem.directive('myItem', function MyItemDirective($http, $templateCache
         $rootScope.$broadcast('scanner-started', { item: item });
       };
 
-      var template = 'my-item';
+      scope.$watch('myItem.type', function(newType) {
+        var template = 'my-item';
 
-      if (scope.myItem.type === 'container')
-        template = 'my-container';
+        if (newType === 'container')
+          template = 'my-container';
 
-      $http.get('app/directives/my-item/'.concat(template, '.html'), {
-        cache: $templateCache
-      }).then(function LoadItemElement(response) {
-        return angular.element(response.data);
-      }).then(function(newElement) {
-        $compile(newElement)(scope, function(clone) {
-          element.append(clone);
+        $http.get('app/directives/my-item/'.concat(template, '.html'), {
+          cache: $templateCache
+        }).then(function LoadItemElement(response) {
+          return angular.element(response.data);
+        }).then(function(newElement) {
+          $compile(newElement)(scope, function(clone) {
+            element.html(clone);
+          });
         });
       });
     }

@@ -18,7 +18,6 @@ var createType = function CreateType(type, label, icon, attrs) {
 };
 
 this.mySystem.constant('itemTypes', [
-  createType('item',           'Item test',       'font', {attr: {}}),
   createType('container',      'Container',        'inbox', {cols: [[]]}),
   createType('input_text',     'Campo livre',      'font', {attr: {}}),
   createType('input_area',     'Texto Livre',      'text-width', {attr: {}}),

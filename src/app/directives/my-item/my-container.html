@@ -4,7 +4,12 @@
   </div>
 
   <div class="panel-body">
-    <ul ng-repeat="rows in myItem.cols" dnd-list="rows">
+    <ul ng-class="{'col-md-12': myItem.cols.length === 1,
+                   'col-md-6':  myItem.cols.length  === 2,
+                   'col-md-4':  myItem.cols.length  === 3,
+                   'col-md-3':  myItem.cols.length  === 4,
+                   'col-md-2':  myItem.cols.length  === 6,
+                   'col-md-1':  myItem.cols.length  === 12}" ng-repeat="rows in myItem.cols" dnd-list="rows">
       <li ng-repeat="item in rows"
           dnd-draggable="item"
           dnd-moved="rows.splice($index, 1)"
